@@ -1,10 +1,24 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
+// require('isomorphic-fetch');
 
 // function to alert user that all fields are required
 
 window.addEventListener("load", function() {
-    alert("All fields in form are required!"); 
+    
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event){
+
+        let pilotInput = document.querySelector("input[name=pilotName");
+        let copilotInput = document.querySelector("input[name=copilotName");
+        let fuelLevelInput = document.querySelector("input[name=fuelLevel");
+        let cargoMassInput = document.querySelector("input[name=cargoMass");
+
+        if (pilotInput.value === "" || copilotInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+            alert("All fields in form are required!");
+            event.preventDefault();
+        }
+    }); 
 });
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
@@ -23,7 +37,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+
+if (testInput === '') {
+    return 'Empty';
+} else if (typeof testInput === 'number'){
+    return 'Is a number';
+} else if (isNaN(testInput)) {
+    return 'Not a Number';
+    }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
