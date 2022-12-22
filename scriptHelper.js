@@ -1,5 +1,5 @@
 // Write your helper functions here!
-// require('isomorphic-fetch');
+require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
    // Here is the HTML formatting for our mission target div.
@@ -50,8 +50,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } else {
 
             list.style.visibility = "visible";
-            pilotStatus.innerHTML = `Pilot ${pilot} is ready for takeoff.`;
-            copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for takeoff.`;
+            pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+            copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
             let status = document.getElementById('launchStatus');
 
             if(fuelLevel < 10000 && cargoLevel <= 10000) {
