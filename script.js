@@ -30,10 +30,10 @@ window.addEventListener("load", function() {
         let copilot = copilotInput.value;
  
         let fuelInput = document.querySelector("input[name=fuelLevel]");
-        let fuelLevel = fuelInput.value;
+        let fuelLevel = Number(fuelInput.value);
  
         let cargoInput = document.querySelector("input[name=cargoMass]");
-        let cargoLevel = cargoInput.value;
+        let cargoLevel = Number(cargoInput.value);
  
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         
