@@ -45,7 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
             alert("All fields in form are required!");
-        } else if (validateInput(pilot) === 'Is a number' || validateInput(copilot) === 'Is a number' || validateInput(Number(fuelLevel)) === 'Not a Number' || validateInput(Number(cargoLevel)) === 'Not a Number') {
+        } else if (validateInput(pilot) === 'Is a number' || validateInput(copilot) === 'Is a number' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
             alert("Check that your inputs are correct!");
         } else {
 
@@ -89,7 +89,7 @@ async function myFetch() {
     if (response.status >= 400) {
         throw new Error("Bad response from server")
     } else {
-        
+
         return response.json();
     }
 
