@@ -85,8 +85,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
   
     let planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
+
+    if (response.status >= 400) {
+        throw new Error("Bad response from server")
+    } else {
         
         return response.json();
+    }
 
         });
 
